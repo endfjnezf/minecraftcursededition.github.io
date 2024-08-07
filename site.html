@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Cursed Edition</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .red-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 0, 0, 0.5);
+            pointer-events: none;
+        }
+
+        h1 {
+            color: rgb(0, 0, 0);
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
+        }
+
+        .hidden-text, .second-text {
+            color: rgb(0, 0, 0);
+            position: absolute;
+            opacity: 0; 
+            pointer-events: none;
+        }
+
+        .hidden-text {
+            top: 80px;
+            animation: fadeIn 1s forwards;
+            animation-delay: 2s;
+        }
+
+        .second-text {
+            top: 140px;
+            animation: fadeIn 1s forwards;
+            animation-delay: 8s;
+        }
+
+        .buttons-container {
+            position: absolute;
+            top: 200px; /* Adjust based on your layout */
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+            animation-delay: 11s; /* Buttons appear after 11 seconds */
+        }
+
+        .button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            cursor: pointer;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+            font-size: 16px; /* Adjust font size as needed */
+        }
+
+        .button span {
+            display: inline-block;
+            white-space: nowrap; /* Prevent text from wrapping */
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .button .label {
+            margin-top: 20px; /* Space between typewriter text and "Download!" text */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                pointer-events: none;
+            }
+            to {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="red-overlay"></div>
+    <h1>Minecraft Cursed Edition</h1>
+    <div class="hidden-text">This is creepy version and scary made by cvom for mobile , in the world are trees without leaves but hight and there some generationg destroyed but it looking very good!</div>
+    <div class="second-text">this version is very good there are 3 version one original one beta and one demonic!</div>
+    <div class="buttons-container">
+        <div class="button" id="classic-button">
+            <span class="label"></span>
+            <div>Download classic!</div>
+        </div>
+        <div class="button" id="beta-button">
+            <span class="label"></span>
+            <div>Download beta!</div>
+        </div>
+        <div class="button" id="demonic-button">
+            <span class="label"></span>
+            <div>Download demonic!</div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.button .label');
+            const typingDelay = 100; // Delay in milliseconds between each character
+
+            function typeText(element, text) {
+                let index = 0;
+                function type() {
+                    if (index < text.length) {
+                        element.textContent += text.charAt(index);
+                        index++;
+                        setTimeout(type, typingDelay);
+                    }
+                }
+                type();
+            }
+
+            // Start typing effect after 11 seconds
+            setTimeout(() => {
+                typeText(document.querySelector('#classic-button .label'), 'Classic');
+                typeText(document.querySelector('#beta-button .label'), 'Beta');
+                typeText(document.querySelector('#demonic-button .label'), 'Demonic');
+            }, 11000); // Start typing after 11 seconds
+
+            // Add click event listeners for the buttons
+            document.getElementById('classic-button').addEventListener('click', () => {
+                window.open('https://download937.mediafire.com/i18wcejxyo7gH8ANWk18bcawdp6ncU6IJkZzCQVzPFGjUnvnf38eSYE-HkY8-e5uqRIMrhbzNMoD1v6oozFn5WKuFX6MY5i21PyzClKLuriq-m90fHvP3klPyxMhLfUwYG3YAsDmyZunHowtAO_cS59YXB-15PiF-wKvM6PAEY_p7bc/m4g95heampvirbw/Minecraft+Cursed+Edition.zip', '_blank'); // Replace with your URL
+            });
+
+            document.getElementById('beta-button').addEventListener('click', () => {
+                window.open('https://download1320.mediafire.com/3k8wcy25nibgxQ5dgbli9fxUrHBbyQ1CtGFOVLswaETGHPYQIviMJYEb3tRhzjJl_ExNm0TizPobJed5BVC23PIv-FZFUEPPstbLLclJgy84x_2QbLUbncr7sDt8IsZZX1_ri3T-bPjMzhYtyNUfPOEr95fgDQSOp6ol2v9ejO49y_Q/itoscgv06ftwcrc/Minecraft+Cursed+Edition+Update+%28Beta+Version%29.apk', '_blank'); // Replace with your URL
+            });
+
+            document.getElementById('demonic-button').addEventListener('click', () => {
+                window.open('https://download2264.mediafire.com/fswtri391cvgfQJpQCGx2cd3XUWXFSvGJbGSmDkvrpKt3-eBkxl6HhsxU16_NH4ETLKRX4qONXXe_-jS9IKsBNz4ZBM4hE6kI-EuXKyGFQiRHNHF6z8YaEzQEdkGxttz6-2L43hByHZhO422_uUmYiHn8mTyufY0GAZjq4tTXAiL_Us/jpfd5qqqmb0q3iu/Minecraft+Cursed+Edition+Update+%28Demonic+Version%29.apk', '_blank'); // Replace with your URL
+            });
+        });
+    </script>
+</body>
+</html>
